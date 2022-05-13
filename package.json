@@ -1,0 +1,26 @@
+{
+  "name": "json-another-crud",
+  "version": "0.0.1",
+  "description": "JSON based crud made with Node.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "startdev": "npx nodemon src/app.js -e js,ejs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ezequiel Cortés",
+  "license": "ISC",
+  "dependencies": {
+    "auth": "^0.0.1",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
