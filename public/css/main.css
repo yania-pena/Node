@@ -1,0 +1,198 @@
+/* Estilos generales*/
+
+/* https://coolors.co/d8a47f-ef8354-ee4b6a-df3b57-0f7173 */
+
+:root {
+    --primary-color: #0f7173;
+    --dark-grey-color: #333;
+    --light-grey-color: #e9f2f2;
+
+    --danger-color: #df3b57;
+    --border-radius: .5rem;
+    --padding: 1rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-grey-color);
+    font-family: sans-serif;
+    color: var(--dark-grey-color);
+}
+
+a { 
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Clases de ayuda */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.main-container {
+    flex-grow: 1;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.image img { width: 100%; }
+
+/* Formularios */
+
+.form-container {
+    max-width: 600px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+}
+
+.form-container .title {
+    font-size: 2rem;
+    padding: 0 0 1rem;
+}
+
+.form-container .image img {
+    border-radius: var(--border-radius);
+    border: 10px solid var(--light-grey-color);
+}
+
+input:not([type='checkbox']),
+textarea,
+select {
+    width: 100%;
+    padding: .5rem;
+    margin: .5rem 0 1rem;
+    background-color: var(--light-grey-color);
+    border: 0;
+    border-radius: var(--border-radius);
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    display: inline-block;
+    padding: var(--padding);
+    background-color: white;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--dark-grey-color);
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.button.is-primary,
+.button.is-danger {
+    color: white;
+    border: 0;
+}
+
+.button.is-primary { background-color: var(--primary-color); }
+.button.is-danger { background-color: var(--danger-color); }
+
+.button + .button,
+.button + form.has-buttons,
+form.has-buttons + .button { margin-left: 1rem; }
+
+/* Mensajes de la plataforma */
+
+.message {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+}
+
+.message.error-message {
+    background-color: #ee4b6a;
+    color: white;
+}
+
+/* Componentes principales */
+
+header,
+footer {
+    background-color: #ee4b6a;
+    color: white;
+}
+
+header a,
+footer a{
+    display: inline-block;
+    padding: .5rem;
+    color: white;
+}
+
+.user-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: .5rem;
+    border-radius: 2rem;
+    background-color: #0f7173;
+}
+
+.user-badge .user-image {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+}
+
+.user-badge .user-name {
+    margin: 0 .5rem;
+}
+
+/* Estilos de cada página */
+
+/* Productos y usuarios */
+
+.products,
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.products::after,
+.users::after {
+    content: "";
+    flex-grow: 1;
+}
+
+.product,
+.user {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    margin: 1rem .5rem
+}
+
+.product .desc {
+    flex-grow: 1;
+}
+
+.product .price {
+    color: #0f7173;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    border-top: 1px solid #0f7173;
+    padding: .5rem 0 0;
+}
+
+@media (min-width: 768px) {
+    .products .product,
+    .users .user {
+        width: calc(25% - 1rem);
+    }
+}
