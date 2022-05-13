@@ -1,0 +1,11 @@
+<%- include('../partials/head') %>
+    <h1>Listado de productos</h1>
+    <section class="products">
+        <% products.forEach(product => { %>
+            <%- include('./partials/product', { product }) %>
+        <% }); %>
+    </section>
+    <section class="buttons">
+        <a class="button is-primary" href="/productos/nuevo">Nuevo producto</a>
+    </section>
+<%- include('../partials/footer') %>
